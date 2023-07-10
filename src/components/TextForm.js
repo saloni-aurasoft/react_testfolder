@@ -28,9 +28,9 @@ export default function TextForm(props) {
     "this is an app which converts any text to uppercase. used concepts- state, useState hooks{text, setText state},event, 2 event listens - onclick(handleupclick) & onchange(handleonchange)"
   );
   return (
-    <div>
+    <div className="container">
       <h1>{props.heading}</h1>
-      <div className="mb-3" style={{color: props.mode==='black'?'white':'black'}} >
+      <div className="mb-3" style={{ color: props.mode === 'black' ? 'white' : 'black' }} >
         <textarea
           className="form-control"
           id="exampleFormControlTextarea1"
@@ -40,15 +40,15 @@ export default function TextForm(props) {
         // style={{backgroundColor: props.mode==='light'? 'dark' : 'light'}}
         ></textarea>
       </div>
-      <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>
         Convert To Uppercase
       </button>
 
-      <button className="btn btn-primary mx-2" onClick={handleLowClick}>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleLowClick}>
         Convert To Lowercase
       </button>
 
-      <button className="btn btn-primary mx-2" onClick={handleClearClick}>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleClearClick}>
         CLear Field
       </button>
 
@@ -57,15 +57,15 @@ export default function TextForm(props) {
       <div className="container">
         <h4>Words and Characters Counter</h4>
         <p>
-          {text.split(" ").length} Words and {text.length} Characters
+          {text.split(" ").filter((element) => { return element.length !== 0 }).length} Words and {text.length} Characters
         </p>
         <h4> Time Counter</h4>
         {/* 3. adding reading time per words */}
-        <p>{0.008 * text.split(" ").length} Minutes read</p>
+        <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length} Minutes read</p>
 
         <h4>Preview</h4>
         {/* 4. adding preview option */}
-        <p>{text.length>0 ? text:"enter your thoughts to preview"}</p>
+        <p>{text.length > 0 ? text : "(this is created using ternary operator condition on text.length)"}</p>
       </div>
     </div>
   );

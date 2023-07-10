@@ -2,11 +2,11 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
-// import About from "./components/About";
+import About from "./components/About";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
 
-// import { BrowserRouter as Router, Route, Routes,  } from "react-router-dom";  //its a package where browserrouter switch route link will be render
+import { BrowserRouter as Router, Route, Routes, } from "react-router-dom";  //its a package where browserrouter switch route link will be render
 
 function App() {
   //giving dark mode and light mode control in app.js
@@ -57,31 +57,25 @@ function App() {
       {/* <BrowserRouter> */}
       {/* <Link to={<TextForm />}> Home </Link> */}
       {/* <Router> */}
+      {/* <div className="container my-md-5"> */}
+      <Router>
+        {/* while setting router put navbar below router tag */}
         <Navbar
-          title="E-Cart"
+          title="ReactApp"
           about="About"
-          // dropdown="Categories"
-          // kids="Kids"
-          // men="Men"
-          // women="Women"
-          // footwear="Footwears"
           mode={mode}
           toggleMode={toggleMode}
         />
-      <div className="container my-md-5">
         <Alert alert={alert} />
-        {/* <Routes> */}
-        {/* <Route exact path="/" element={ */}
-          <TextForm heading="Mention Your Thoughts" mode={mode} showAlert={showAlert} />
-          {/* // } /> */}
-        {/* <Route exact path="/about" element={<About />}> About </Route> */}
-        {/* <Route exact path="/" element={<About />}> About </Route> */}
-
-        {/* <Route path="/about" element={<About />} /> */}
-        {/* </Routes> */}
-      {/* </Router> */}
-      {/* </BrowserRouter> */}
-      </div>
+        <Routes>
+          <Route exact path="/" element={
+            <TextForm heading="Try React app to convert your thoughts into reality" mode={mode} showAlert={showAlert} />
+          } />
+          <Route exact path="/about" element={<About />}> About </Route>
+        </Routes>
+      </Router>
+      {/* </div> */}
+      {/* <About /> */}
     </>
   );
 }

@@ -25,7 +25,7 @@ export default function About() {
   return (
     // to give style we create a style obj and pass it as variable
     <div className="container" style={myStyle}>
-      <h1 className=" my-5 text-center">ABOUT US</h1>
+      <h1 className="text-center">ABOUT US</h1>
       <p className="text-center">
         in this section we will se how to <b> Enable </b> and <b> Disable </b>{" "}
         dark mode function
