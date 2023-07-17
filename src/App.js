@@ -6,7 +6,7 @@ import About from "./components/About";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
 
-import { BrowserRouter as Router, Route, Routes, } from "react-router-dom";  //its a package where browserrouter switch route link will be render
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";  //its a package where browserrouter switch route link will be render
 
 function App() {
   //giving dark mode and light mode control in app.js
@@ -56,7 +56,7 @@ function App() {
 
       {/* <BrowserRouter> */}
       {/* <Link to={<TextForm />}> Home </Link> */}
-      {/* <Router> */}
+       
       {/* <div className="container my-md-5"> */}
       <Router>
         {/* while setting router put navbar below router tag */}
