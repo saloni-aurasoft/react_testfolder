@@ -20,7 +20,7 @@ function App() {
       msg: message,
       typ: type
 
-    })
+    })  
   }
   const toggleMode = () => {
     if (mode === "light") {
